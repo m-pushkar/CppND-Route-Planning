@@ -9,6 +9,8 @@
 #include "route_planner.h"
 
 using namespace std::experimental;
+using std::cout;
+using std::cin;
 
 static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
 {   
@@ -55,12 +57,37 @@ int main(int argc, const char **argv)
     // TODO 1: Declare floats `start_x`, `start_y`, `end_x`, and `end_y` and get
     // user input for these values using std::cin. Pass the user input to the
     // RoutePlanner object below in place of 10, 10, 90, 90.
+  float start_x, start_y, end_x, end_y;
+  float s_x, s_y, e_x, e_y;
+  cout << "Input values from 0 to 100" << "\n";
+  cout << "x coordinate of starting point: ";
+  cin >> s_x;
+  if (s_x < 100 && s_x > 0) {start_x = s_x;}
+  else {cout << "Error: value is greater than 100" << "\n";}
+  
+  cout << "y coordinate of starting point: ";
+  cin >> s_y;
+  if (s_y < 100 && s_y > 0) {start_y = s_y;}
+  else {cout << "Error: value is greater than 100" << "\n";}
+  
+  cout << "x coordinate of goal: ";
+  cin >> e_x;
+  if (e_x < 100 && e_x > 0) {end_x = e_x;}
+  else {cout << "Error: value is greater than 100" << "\n";}
+  
+  cout << "y coordinate of goal: ";
+  cin >> e_y;
+  if (e_y < 100 && e_y > 0) {end_y = e_y;}
+  else {cout << "Error: value is greater than 100" << "\n";}
+  
+  cout << "You have entered start point as: " << start_x << "," << start_y << "\n";
+  cout << "You have entered goal as: " << end_x << "," << end_y << "\n";
 
     // Build Model.
     RouteModel model{osm_data};
 
     // Create RoutePlanner object and perform A* search.
-    RoutePlanner route_planner{model, 10, 10, 90, 90};
+    RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
     route_planner.AStarSearch();
 
     std::cout << "Distance: " << route_planner.GetDistance() << " meters. \n";
