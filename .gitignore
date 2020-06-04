@@ -1,5 +1,4 @@
 *.swp
-*.osm
 *.o
 draw.cpp
 test.cpp
@@ -7,4 +6,4 @@ build/
 bin/
 lib/
 .DS_Store
-.DS_Store
+
