@@ -1,9 +1,22 @@
 # Route Planning Project
+C++ Nanodegree Program
 
-This repo contains the starter code for the Route Planning project.
+---
+## Introduction
+This is a self explanatory starter project of C++ nanodegree. The picture that is included in the project, explains the code architecture.
 
-<img src="map.png" width="600" height="450" />
+![01](arch.png)
 
+Steps to follow:
+1. Once you successfully compile the code (after passing the test script included), to get rendered result you need to build the executable in virtual desktop's Visual studio.
+2. Download completed workspace repo and upload it to your github.
+3. Then in virtual desktop, log into your github and clone repo.
+4. Build and run the code in Visual studio to see the rendered result on map.
+
+![02](map.png)
+
+
+# Udacity README  
 ## Cloning
 
 When cloning this project, be sure to use the `--recurse-submodules` flag. Using HTTPS:
@@ -58,4 +71,3 @@ The testing executable is also placed in the `build` directory. From within `bui
 ```
 ./test
 ```
-
